@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/generatedtext.png" type="Texture" id=2]
+[ext_resource path="res://Overworld.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 0.670588 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Overworld" parent="." instance=ExtResource( 3 )]
+main_menu = true
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -40.0
+margin_top = 301.0
+margin_right = 929.0
+margin_bottom = 456.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 615.0
+margin_top = 165.0
+margin_right = 886.0
+margin_bottom = 594.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Generatedtext" type="Sprite" parent="."]
+position = Vector2( 341, 379 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 286.0
+margin_top = 526.0
+margin_right = 396.0
+margin_bottom = 546.0
+text = "Start The Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

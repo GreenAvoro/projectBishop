@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Overworld.gd" type="Script" id=1]
+[ext_resource path="res://CRT PANEL.tscn" type="PackedScene" id=2]
+
+[node name="Overworld" type="Node2D"]
+script = ExtResource( 1 )
+water_line = 0.18
+sand_amount = 0.02
+
+[node name="Label" type="Label" parent="."]
+margin_left = 55.0
+margin_top = 37.0
+margin_right = 113.0
+margin_bottom = 68.0
+text = "Position
+x: 0,  y: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" parent="." instance=ExtResource( 2 )]
+visible = false
